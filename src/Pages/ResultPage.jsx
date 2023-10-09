@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styles from "../App.module.css";
 import { resultData } from "../constants/resultData";
-import { Link, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 
 const ResultPage = () => {
@@ -18,8 +18,8 @@ const ResultPage = () => {
     }, []);
 
     const clickShareHandler = () => {
-      Kakao.Share.createCustomButton({
-        container: '#kakaotalk-sharing-btn',
+      Kakao.Share.sendCustom({
+        
         templateId: 99283,
         templateArgs: {
           THU: "https://mbti-test-evae.vercel.app" + resultMBTIData.image,
